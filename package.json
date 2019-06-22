@@ -1,0 +1,21 @@
+{
+  "name": "console-hub",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "pkg": {
+    "assets": "index.html"
+  },
+  "description": "Console hub application",
+  "author": "Daniel Bulant",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^5.0.4",
+    "electron-packager": "^14.0.0"
+  },
+  "dependencies": {
+    "node-wifi": "^2.0.5"
+  }
+}
