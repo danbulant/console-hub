@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Console hub (ALPHA)</title>
+  <link rel="stylesheet" href="iconfont/styles.css">
+  <link rel="stylesheet" href="styles.min.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="welcome-main">
+    <h1 class="title-font">Welcome</h1>
+    <h5 class="glow" id="welcome-continue">Press <b>START</b> to procceed</h5>
+  </div>
+
+  <nav>
+    <div class="profile">
+      Not loged in
+    </div>
+    <div class="info">
+      <i class="material-icons">
+        network_wifi
+      </i>
+      <span class="time" id="time">
+        00:00
+      </span>
+    </div>
+  </nav>
+
+  <div id="selection" class="menu hidden">
+
+    <div id="games-view" class="menu-item hidden">
+      <h1 class="title-font">Games</h1>
+
+      <div class="previews">
+        <div class="game" id="game-slimey">
+          <img src="games/slimey.png" class="game-preview">
+          <span>Slimey, JUMP</span>
+        </div>
+        <div class="game" id="game-test2">
+          <img src="https://cdn.supercell.com/supercell.com/190617073222/supercell.com/files/styles/hero_image_narrow/public/hero_bg_brawlstars_.jpg?itok=yifeFssz&timestamp=1544532809" class="game-preview">
+          <span>Brawl stars</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="settings-view" class="menu-item hidden">
+      <h1 class="title-font">Settings</h1>
+
+      <div class="switch-label option switchable" id="option-fullscreen">
+        <span>Fullscreen</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="switch-label option switchable" id="option-auto-update">
+        <span>Auto updates</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+    </div>
+
+    <div id="account-view" class="menu-item hidden">
+      <h1 class="title-font">Account</h1>
+      <p>You aren't signed in</p>
+      <button>Login/register</button>
+    </div>
+
+    <div id="store-view" class="menu-item hidden">
+      <h1 class="title-font">Store</h1>
+      <p>Not available in ALHPA stage</p>
+    </div>
+
+  </div>
+
+  <div id="dialog" class="hidden">
+    <h1 id="dialog-title">TITLE</h1>
+    <p id="dialog-text">TEXT</p>
+    <div id="dialog-buttons">
+      <button id="dialog-button_1">OK</button>
+    </div>
+  </div>
+
+  <div id="main-menu" class="main hidden">
+
+    <div class="button-main-container">
+      <div class="button-main selected" id="games">
+        <div class="button-menu" id="games-menu">
+          <i class="material-icons">
+            videogame_asset
+          </i>
+        </div>
+        <span>
+          Games
+        </span>
+      </div>
+    </div>
+    <div class="button-main-container">
+      <div class="button-main " id="settings">
+        <div class="button-menu" id="settings-menu">
+          <i class="material-icons">
+            settings
+          </i>
+        </div>
+        <span>
+          Settings
+        </span>
+      </div>
+    </div>
+    <div class="button-main-container">
+      <div class="button-main " id="account">
+        <div class="button-menu" id="account-menu">
+          <i class="material-icons">
+            account_box
+          </i>
+        </div>
+        <span>
+          Account
+        </span>
+      </div>
+    </div>
+    <div class="button-main-container">
+      <div class="button-main " id="store">
+        <div class="button-menu" id="store-menu">
+          <i class="material-icons">
+            local_grocery_store
+          </i>
+        </div>
+        <span>
+          Store
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="back" class="back-arrow hidden">
+    <i class="material-icons circle">
+      arrow_back
+    </i>
+    <span id="back-text">back</span>
+  </div>
+
+  <div id="snackbar"></div>
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script><!-- This is done to eliminate $ is not define on electron -->
+  <script src="../jquery.min.js"></script>
+  <script>if (window.module) module = window.module;</script>
+  <script src="gamepad.js"></script>
+  <script src="functions.js"></script>
+  <script src="script.js"></script>
+  <script src="onlineChecker.js"></script>
+  <script src="node.js"></script>
+  <script src="keyboard.js"></script>
+  <script>
+  </script>
+</body>
+</html>
