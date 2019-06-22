@@ -1,0 +1,16 @@
+{
+  "short_name": "Console hub",
+  "name": "Console hub beta",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/ico"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#5d75ad",
+  "display": "standalone",
+  "orientation": "landscape",
+  "scope": "/",
+  "theme_color": "#5d75ad"
+}
