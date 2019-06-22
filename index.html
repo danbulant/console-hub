@@ -2,65 +2,11 @@
 <html lang="cs" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Console hub</title>
+    <title>Console hub (redirecting..)</title>
+    <meta http-equiv="refresh" content="0;url=/html/index.html">
   </head>
-  <body onload="onLoad();">
+  <body>
     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-
-    <iframe disablewebsecurity id="frame" style="display: none; " src="" width="100%" height="100%" frameborder="0"></iframe>
-
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-    <script src="jquery.min.js"></script>
-    <script>if (window.module) module = window.module;</script>
-
-    <script>
-    var wifi, wifiQuality;
-    var loaded = false;
-    function onLoad(){
-      $.ajax("https://console.danbulant.eu")
-        .done((function (){
-          loaded = true;
-          $(".lds-ellipsis").hide();
-          $('#frame').attr('src', 'https://console.danbulant.eu')
-          $('#frame').show();
-        }))
-        .fail((function (){
-          $('#frame').attr('src', 'html/index.html');
-          $('.lds-ellipsis').hide();
-          $('#frame').show();
-        }))
-    }
-    function showOnline(){
-      if(!loaded){
-        if(navigator.online){
-          $('#frame').attr('src', 'https://console.danbulant.eu');
-        }
-      }
-    }
-    window.addEventListener('online',  showOnline);
-
-    // In renderer process (web page).
-    const { ipcRenderer } = require('electron')
-
-    ipcRenderer.on('wifi', (event, arg) => {
-      wifi = arg;
-      document.getElementById('frame').contentWindow.wifi = wifi;
-    })
-    ipcRenderer.on('wifiQuality', (event, arg) => {
-      wifiQuality = arg;
-      document.getElementById("frame").contentWindow.wifiQuality = wifiQuality;
-    })
-    ipcRenderer.on('fullscreen', (event, arg) => {
-      console.log("Fullscreen now " + arg);
-      document.getElementById("frame").contentWindow.settingMenuItemValues[0] = arg;
-    })
-    function sendFullscreen(bool){
-      console.log("Sending fullscreen " + bool);
-      ipcRenderer.send('fullscreen', bool);
-    }
-    ipcRenderer.send('get-data', 'wifi');
-    ipcRenderer.send('get-data', 'wifiQuality');
-    </script>
     <style>
     html, body, iframe, webview{
       margin: 0;
