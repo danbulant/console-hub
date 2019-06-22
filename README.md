@@ -11,6 +11,5 @@ If you want this console to be available online, please keep in mind that it is 
 To install, just upload all files onto your hosting and access /html/ (index.html in root redirects there).
 ## Add missing files
 Because of legal issues (Copyright, cannot upload publicly), fonts and styles are missing. To fix that, you must do following steps:
-* **download material icons**: First of all, you need to download material icons. Stylesheet is made to include style.css from /html/iconfont/ where downloaded material icon pack should be. You can download them [github](http://github.com/google/material-design-icons/)
 * **download open sans**: Because of legal issues, I cannot place here direct link. One that I use is [font-squirrel](https://www.fontsquirrel.com/fonts/open-sans). Put all the files in /html/opensans/. Styles.css will automatically include them.
 If you did everything correctly, Console hub now have all required files to run.
