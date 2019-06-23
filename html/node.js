@@ -21,11 +21,17 @@ if(typeof module !== undefined){
   }
   ipcRenderer.send('get-data', 'wifi');
   ipcRenderer.send('get-data', 'wifiQuality');
+  var files = null;
   ipcRenderer.on('listFiles', (event, arg) => {
     console.log(arg);
+    files = arg;
+    refreshFiles();
   })
-  ipcRenderer.send('listFiles', 'C:\\Users\\Dan\\Documents\\GitHub\\console-hub');
+  var loc = window.location.pathname;
+  var dir = loc.substring(0, loc.lastIndexOf('/'));
+  ipcRenderer.send('listFiles', dir);
 } else {
   //no NODE integration, propably browser access
-  $("div:has(#files)").hide();//Disable file system view
+  $("div:has(#files)").hide();//Disable file system preview
+  mainMenuItems.slice("files");
 }
