@@ -1,4 +1,4 @@
-# console-hub
+# console-hub [![Build Status](https://travis-ci.org/danbulant/console-hub.svg?branch=master)](https://travis-ci.org/danbulant/console-hub)
 Hub application to be controlled with controller (gamepad) through gamepad HTML5 API
 
 ## Installation
