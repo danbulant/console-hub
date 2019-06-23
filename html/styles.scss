@@ -166,6 +166,30 @@ html {
       }
     }
   }
+  #files-view {
+
+    ul {
+      width: calc(100% + 15px);
+      overflow-x: hidden;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      margin-left: -15px; //realy left
+      li {
+        vertical-align: middle;
+        padding-top: 11px;
+        padding-left: 15px;
+        height: 36px;
+        background: rgba(255,255,255,0.2);
+      }
+      .selected {
+        background: rgba(255,255,255,0.6);
+      }
+      :nth-child(odd){
+        background: rgba(255,255,255,0.4);
+      }
+    }
+  }
 }
 /*
 * Information panel, marked as 'nav'
