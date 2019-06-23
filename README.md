@@ -19,3 +19,9 @@ Because of legal issues (Copyright, cannot upload publicly), fonts and styles ar
 * **download open sans**: Because of legal issues, I cannot place here direct link. One that I use is [font-squirrel](https://www.fontsquirrel.com/fonts/open-sans). Put all the files in /html/opensans/. Styles.css will automatically include them.
 
 If you did everything correctly, Console hub now have all required files to run.
+
+## Demo
+### GitHub
+A github demo is accesible on [GitHub.io](https://danbulant.github.io/console-hub/html/index.html), where is available latest development.
+### Stable
+A stable version is available on [danbulant.eu](https://console.danbulant.eu), where is latest working stable release.
