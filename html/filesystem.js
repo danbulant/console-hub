@@ -4,10 +4,12 @@ function refreshFiles(){
     return;
   }
   var shown = [];
+  $("#files-list").empty();
   files.forEach((item, index) => {
     shown[index] = document.createElement('li');
     $("#files-list").append(shown[index]);
     shown[index].id = "file-" + index;
-    $("#file-" + index).html(item);
+    var name = item.substring(item.lastIndexOf('\\') + 1, item.length);
+    $("#file-" + index).html(name);
   });
 }
