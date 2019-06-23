@@ -21,6 +21,10 @@ if(typeof require() != undefined){
   }
   ipcRenderer.send('get-data', 'wifi');
   ipcRenderer.send('get-data', 'wifiQuality');
+  ipcRenderer.on('listFiles', (event, arg) => {
+    console.log(arg);
+  })
+  ipcRenderer.send('listFiles', '/');
 } else {
   //no NODE integration, propably browser access
 }

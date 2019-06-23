@@ -1,6 +1,7 @@
-const { dialog, Menu, app, BrowserWindow } = require('electron')
+const { dialog, Menu, app, BrowserWindow } = require('electron');
+var files = require('./files');
 var wifi = require('node-wifi');
-let win
+let win;
 
 wifi.init({
     iface : null
@@ -169,6 +170,14 @@ ipcMain.on('set-load', (event, arg) => {
 ipcMain.on('fullscreen', (event, arg) => {
   console.log('Setting to fullscreen ' + arg);
   win.setFullScreen(arg);
+})
+ipcMain.on('listFiles', (event, arg) => {
+  console.log('Listing all files and directories in ' + arg);
+  dirs = files.walkDir('my-dir', function(filePath) {
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    console.log(filePath, fileContents);
+  });
+  event.reply('listFiles', fileContents);
 })
 app.setAppUserModelId(process.execPath)
 
