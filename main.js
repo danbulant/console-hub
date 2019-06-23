@@ -173,7 +173,7 @@ ipcMain.on('fullscreen', (event, arg) => {
 })
 ipcMain.on('listFiles', (event, arg) => {
   console.log('Listing all files and directories in ' + arg);
-  dirs = files.walkDir('my-dir', function(filePath) {
+  dirs = files.walkDir(arg, function(filePath) {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     console.log(filePath, fileContents);
   });
