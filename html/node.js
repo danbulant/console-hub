@@ -27,4 +27,5 @@ if(typeof require != undefined){
   ipcRenderer.send('listFiles', 'C:\\Users\\Dan\\Documents\\GitHub\\console-hub');
 } else {
   //no NODE integration, propably browser access
+  $("div:has(#files)").hide();//Disable file system view
 }
