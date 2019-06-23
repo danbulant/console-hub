@@ -22,6 +22,7 @@ If you did everything correctly, Console hub now have all required files to run 
 
 ## Demo
 ### GitHub
-A github demo is accesible on [GitHub.io](https://danbulant.github.io/console-hub/html/index.html), where is available latest development.
-### Stable
-A stable version is available on [danbulant.eu](https://console.danbulant.eu), where is latest working stable release.
+A github demo is accesible on [GitHub.io](https://console.danbulant.eu/console-hub/html/index.html), where is available latest development.
+
+## Features
+For feature/bugs that are currently worked on, please see our (kanban table)[https://trello.com/b/DlwuRuwZ/console-hub]
