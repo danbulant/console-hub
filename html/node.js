@@ -28,7 +28,7 @@ if(typeof module !== undefined){
     refreshFiles();
   })
   var loc = window.location.pathname;
-  var dir = loc.substring(0, loc.lastIndexOf('/'));
+  var dir = loc.substring(1, loc.lastIndexOf('/'));//fix file:///, only on node
   ipcRenderer.send('listFiles', dir);
 } else {
   //no NODE integration, propably browser access
