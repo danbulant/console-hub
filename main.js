@@ -1,4 +1,6 @@
 const { dialog, Menu, app, BrowserWindow } = require('electron');
+var fs = require('fs');
+var path = require('path');
 var files = require('./files');
 var wifi = require('node-wifi');
 let win;

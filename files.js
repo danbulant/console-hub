@@ -9,7 +9,7 @@ module.exports = {
     let dirPath = path.join(dir, f);
     let isDirectory = fs.statSync(dirPath).isDirectory();
     isDirectory ?
-      walkDir(dirPath, callback) : callback(path.join(dir, f));
+      this.walkDir(dirPath, callback) : callback(path.join(dir, f));
     });
   }
 }
