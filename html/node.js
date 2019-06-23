@@ -1,4 +1,4 @@
-if(typeof module !== undefined){
+if(typeof require !== typeof undefined){
   var wifi, wifiQuality;
   // In renderer process (web page).
   const { ipcRenderer } = require('electron')
