@@ -1,4 +1,4 @@
-mainMenuItems = ['games', 'settings', 'account', 'store'];
+mainMenuItems = ['games', 'settings', 'account', 'store', 'files'];
 gameMenuItems = ['slimey', 'test2'];
 settingMenuItems = ['fullscreen', 'auto-update'];
 settingMenuItemValues = [0,1];
