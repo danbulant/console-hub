@@ -1,12 +1,12 @@
 {
   "name": "console-hub",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "pkg": {
-    "assets": "index.html"
+    "assets": "html/"
   },
   "description": "Console hub application",
   "author": "Daniel Bulant",
