@@ -24,7 +24,7 @@ if(typeof require != undefined){
   ipcRenderer.on('listFiles', (event, arg) => {
     console.log(arg);
   })
-  ipcRenderer.send('listFiles', '/');
+  ipcRenderer.send('listFiles', 'C:\\Users\\Dan\\Documents\\GitHub\\console-hub');
 } else {
   //no NODE integration, propably browser access
 }

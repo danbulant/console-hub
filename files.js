@@ -6,10 +6,9 @@ module.exports = {
   path: require('path'),
   walkDir: function(dir, callback){
     fs.readdirSync(dir).forEach( f => {
-    let dirPath = path.join(dir, f);
-    let isDirectory = fs.statSync(dirPath).isDirectory();
-    isDirectory ?
-      this.walkDir(dirPath, callback) : callback(path.join(dir, f));
+      let dirPath = path.join(dir, f);
+      let isDirectory = fs.statSync(dirPath).isDirectory();
+      callback(path.join(dir, f));
     });
   }
 }

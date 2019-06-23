@@ -175,11 +175,20 @@ ipcMain.on('fullscreen', (event, arg) => {
 })
 ipcMain.on('listFiles', (event, arg) => {
   console.log('Listing all files and directories in ' + arg);
-  dirs = files.walkDir(arg, function(filePath) {
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    console.log(filePath, fileContents);
+  dirs = [];
+  counter = 0;
+  files.walkDir(arg, function(filePath) {
+    console.log(filePath);
+    dirs[counter] = filePath;
+    counter++;
   });
-  event.reply('listFiles', fileContents);
+  counter = 0;
+  dirs.sort(function(a, b){
+    if(a < b) { return -1; }
+    if(a > b) { return 1; }
+    return 0;
+  })
+  event.reply('listFiles', dirs);
 })
 app.setAppUserModelId(process.execPath)
 
