@@ -167,26 +167,51 @@ html {
     }
   }
   #files-view {
-
-    ul {
-      width: calc(100% + 15px);
-      overflow-x: hidden;
-      list-style-type: none;
-      padding-left: 0;
-      margin: 0;
-      margin-left: -15px; //realy left
-      li {
-        vertical-align: middle;
-        padding-top: 11px;
-        padding-left: 15px;
-        height: 36px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 500px;
+    #files-list-container {
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+      ::-webkit-scrollbar-button {
+        width: 0px;
+      }
+      ::-webkit-scrollbar-thumb {
         background: rgba(255,255,255,0.2);
+        border-radius: 50px;
       }
-      .selected {
-        background: rgba(255,255,255,0.6);
-      }
-      :nth-child(odd){
+      ::-webkit-scrollbar-thumb:hover {
         background: rgba(255,255,255,0.4);
+      }
+      ::-webkit-scrollbar-thumb:active {
+        background: rgba(255,255,255,0.5);
+      }
+      width: 100%;
+      height: 80%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin: 0;
+      ul {
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        height: 80%;
+        width: 100%;
+        overflow-x: hidden;
+        list-style-type: none;
+        padding-left: 0;
+        li {
+          vertical-align: middle;
+          padding-top: 11px;
+          padding-left: 15px;
+          height: 36px;
+        }
+        li:not(:first-child){
+          border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .selected {
+          background: rgba(255,255,255,0.4);
+        }
       }
     }
   }
