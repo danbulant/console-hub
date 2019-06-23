@@ -4,7 +4,7 @@ function refreshFiles(){
     return;
   }
   var shown = [];
-  files.foreach((item, index) => {
+  files.forEach((item, index) => {
     shown[index] = document.createElement('li');
     $("#files-list").append(shown[index]);
     shown[index].id = "file-" + index;
