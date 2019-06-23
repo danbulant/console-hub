@@ -5,6 +5,10 @@ function refreshFiles(){
   }
   var shown = [];
   $("#files-list").empty();
+  var up = document.createElement('li');
+  $("#files-list").append(up);
+  up.id = "file-up";
+  $("#file-up").html(' . .');
   files.forEach((item, index) => {
     shown[index] = document.createElement('li');
     $("#files-list").append(shown[index]);
