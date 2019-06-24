@@ -5,6 +5,13 @@ Hub application to be controlled with controller (gamepad) through gamepad HTML5
 Installation can be done both with electron and on normal websites.
 
 ### Electron
+#### Requirements
+To run electron version, you must have the following:
+
+* Java 8 runtime
+* Node (10+)
+* Other will be installed automatically via project.json
+
 If you have installed node.js and electron, you can build the app yourself.
 For packaging, I personally use (and prefer) [electron-packager](https://github.com/electron-userland/electron-packager).
 Use all files in the repository (`electron-packager .`)
