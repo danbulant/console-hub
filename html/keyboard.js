@@ -23,3 +23,55 @@ $(document).keypress((event) => {
     event.preventDefault();
   }
 })
+var keyBinds = new Map();
+var pressed = [];
+var gameLooper = 0;
+//Sending keys from gamepad
+function changeToGame(){
+  //Called when game is running
+  //reset events
+  gamepad.off('press', 'start');
+  gamepad.off('press', 'd_pad_left');
+  gamepad.off('press', 'd_pad_right');
+  gamepad.off('press', 'button_1');
+  gamepad.off('press', 'button_2');
+  //add custom ones
+  keyBinds.foreach((val, key) => {
+    gamepad.on('press', key, () => {
+      pressed.push(val);
+    })
+  })
+
+  gameLooper = setInterval(() => {
+    sendKeys(pressed);
+    pressed = [];
+  }, 100);
+}
+
+function changeToMenu(){
+  clearInterval(gameLooper); //stop sending keys
+  //Called when game is stopped
+  //reset events
+  gamepad.off('press', 'start');
+  gamepad.off('press', 'd_pad_left');
+  gamepad.off('press', 'd_pad_right');
+  gamepad.off('press', 'button_1');
+  gamepad.off('press', 'button_2');
+  //restore original events
+  gamepad.on('press', 'start', () => {
+    showMainMenu();
+  });
+
+  gamepad.on('press', 'd_pad_left', () => {
+    goLeft();
+  });
+  gamepad.on('press', 'd_pad_right', () => {
+    goRight();
+  });
+  gamepad.on('press', 'button_1', () => {
+    select();
+  });
+  gamepad.on('press', 'button_2', () => {
+    deselect();
+  });
+}

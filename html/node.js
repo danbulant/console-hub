@@ -27,11 +27,19 @@ if(typeof require !== typeof undefined){
     files = arg;
     refreshFiles();
   })
+  function sendKeys(arg){
+    ipcRenderer.send('sendKeys', arg);
+    return true;
+  }
   var loc = window.location.pathname;
   var dir = loc.substring(1, loc.lastIndexOf('/'));//fix file:///, only on node
   ipcRenderer.send('listFiles', dir);
 } else {
   //no NODE integration, propably browser access
+  function sendKeys(arg){
+    return false;
+  }
+  toast('Missing node - features may not be available');
   $("div:has(#files)").hide();//Disable file system preview
   mainMenuItems.slice("files");
 }
