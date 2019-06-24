@@ -21,12 +21,12 @@ function select(){
   }
   if(window.menu == 1){
     if(selected == 1){
-      window.menu = 2;
-      window.selected = 1;
-      $(".button-main.selected").removeClass("selected");
-      $(".button-main-container.selected").removeClass("selected");
-      menuType = 'horizontal';
-      selectGameMenuItem();
+      // window.menu = 2;
+      // window.selected = 1;
+      // $(".button-main.selected").removeClass("selected");
+      // $(".button-main-container.selected").removeClass("selected");
+      // menuType = 'horizontal';
+      // selectGameMenuItem();
     } else if(selected == 2){
       window.selected = 1
       window.menu = 3;
