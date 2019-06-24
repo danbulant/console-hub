@@ -24,6 +24,7 @@ $(document).keypress((event) => {
   }
 })
 var keyBinds = new Map();
+keyBinds.set('button_1', '~')//set button_1 (A) as enter
 var pressed = [];
 var gameLooper = 0;
 //Sending keys from gamepad
@@ -36,16 +37,17 @@ function changeToGame(){
   gamepad.off('press', 'button_1');
   gamepad.off('press', 'button_2');
   //add custom ones
-  keyBinds.foreach((val, key) => {
+  keyBinds.forEach((val, key) => {
     gamepad.on('press', key, () => {
-      pressed.push(val);
+      sendKeys(val);
     })
   })
 
-  gameLooper = setInterval(() => {
-    sendKeys(pressed);
-    pressed = [];
-  }, 100);
+  // gameLooper = setInterval(() => {
+  //   if(pressed == []) return;
+  //   sendKeys(pressed);
+  //   pressed = [];
+  // }, 100);
 }
 
 function changeToMenu(){
