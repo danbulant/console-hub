@@ -3,6 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var files = require('./files');
 var wifi = require('node-wifi');
+var ks = require('node-key-sender');
 let win;
 
 wifi.init({
@@ -172,6 +173,10 @@ ipcMain.on('set-load', (event, arg) => {
 ipcMain.on('fullscreen', (event, arg) => {
   console.log('Setting to fullscreen ' + arg);
   win.setFullScreen(arg);
+})
+ipcMain.on('sendKeys', (event, arg) => {
+  console.log('Sending keys: '+arg);
+  ks.sendCombination(arg);
 })
 ipcMain.on('listFiles', (event, arg) => {
   console.log('Listing all files and directories in ' + arg);
