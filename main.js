@@ -28,6 +28,7 @@ function createWindow () {
     width: 800,
     height: 600,
     frame: true,
+    fullScreen: true,
     webPreferences: {
       nodeIntegration: true,
       nodeIntegrationInWorker: true,
@@ -174,9 +175,16 @@ ipcMain.on('fullscreen', (event, arg) => {
   console.log('Setting to fullscreen ' + arg);
   win.setFullScreen(arg);
 })
-ipcMain.on('sendKeys', (event, arg) => {
+
+function sendKeybinding (win, modifiers, keyCode) {
+  win.webContents.sendInputEvent({ type: 'keyDown', modifiers, keyCode })
+  win.webContents.sendInputEvent({ type: 'char', modifiers, keyCode })
+  win.webContents.sendInputEvent({ type: 'keyUp', modifiers, keyCode })
+}
+
+ipcMain.on('sendKeys', (event, modifiers, keyCode) => {
   console.log('Sending keys: '+arg);
-sendkeys.send(arg);
+  sendKeybinding(win, modifiers, keyCode);
 })
 ipcMain.on('listFiles', (event, arg) => {
   console.log('Listing all files and directories in ' + arg);
