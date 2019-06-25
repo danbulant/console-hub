@@ -3,7 +3,6 @@ var fs = require('fs');
 var path = require('path');
 var files = require('./files');
 var wifi = require('node-wifi');
-const sendkeys = require('sendkeys-js')
 let win;
 
 wifi.init({
