@@ -176,13 +176,13 @@ ipcMain.on('fullscreen', (event, arg) => {
 })
 
 function sendKeybinding (win, modifiers, keyCode) {
-  win.webContents.sendInputEvent({ type: 'keyDown', modifiers, keyCode })
-  win.webContents.sendInputEvent({ type: 'char', modifiers, keyCode })
-  win.webContents.sendInputEvent({ type: 'keyUp', modifiers, keyCode })
+  win.webContents.sendInputEvent({ type: 'keyDown', modifiers: modifiers, keyCode: keyCode })
+  win.webContents.sendInputEvent({ type: 'char', modifiers: modifiers, keyCode: keyCode })
+  win.webContents.sendInputEvent({ type: 'keyUp', modifiers: modifiers, keyCode: keyCode })
 }
 
 ipcMain.on('sendKeys', (event, modifiers, keyCode) => {
-  console.log('Sending keys: '+arg);
+  console.log('Sending keys: '+keyCode + " with modifiers " + modifiers);
   sendKeybinding(win, modifiers, keyCode);
 })
 ipcMain.on('listFiles', (event, arg) => {

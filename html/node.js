@@ -27,8 +27,8 @@ if(typeof require !== typeof undefined){
     files = arg;
     refreshFiles();
   })
-  function sendKeys(arg){
-    ipcRenderer.send('sendKeys', arg);
+  function sendKeys(arg, arg2){
+    ipcRenderer.send('sendKeys', arg, arg2);
     return true;
   }
   var loc = window.location.pathname;

@@ -24,7 +24,7 @@ $(document).keypress((event) => {
   }
 })
 var keyBinds = new Map();
-keyBinds.set('button_1', '~')//set button_1 (A) as enter
+keyBinds.set('button_1', 'enter')//set button_1 (A) as enter
 var pressed = [];
 var gameLooper = 0;
 //Sending keys from gamepad
@@ -39,7 +39,7 @@ function changeToGame(){
   //add custom ones
   keyBinds.forEach((val, key) => {
     gamepad.on('press', key, () => {
-      sendKeys(val);
+      sendKeys([], val);
     })
   })
 
