@@ -35,8 +35,13 @@ function getCard(card){
 
 function renderCardList(cards){
     var view = document.getElementById("view");
+    var list = document.createElement("div");
 
+    view.appendChild(list);
 
+    list.classList.add("cards-list");
+
+    
 }
 
 function showAction(action, side){
