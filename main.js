@@ -34,7 +34,7 @@ function createWindow () {
       webSecurity: false
     }
   })
-  win.setTitle('Console hub (ALPHA) DEV');
+  win.setTitle('Console hub (ALPHA)');
   win.setProgressBar(1.1);
   win.setFullScreenable(true);
   var template = [{
@@ -125,7 +125,7 @@ function createWindow () {
   const menu = Menu.buildFromTemplate(template);
   win.setAutoHideMenuBar(true);
   Menu.setApplicationMenu(menu);
-  win.loadFile('html/index.html')
+  win.loadFile('html/views/index.html')
   win.webContents.once('dom-ready', () => {
   //   win.webContents.openDevTools() //debug tools
     win.setProgressBar(0);
