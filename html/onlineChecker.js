@@ -13,10 +13,8 @@ function updateIndicator() {
     } else {
       $('.info i').html('signal_wifi_0_bar');
     }
-    console.log('Wifi quality is ' + wifiQuality + '%')
   } else {
     $('.info i').html('signal_wifi_off');
-    console.log('offline');
   }
 }
 
