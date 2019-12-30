@@ -9,6 +9,8 @@ function gamepadConnected(){
 
     gui.showTitle("Your profile");
     gui.showDescription("Select or login with your Pushr account to continue");
+
+    gui.renderCardList(utils.usersToCards(utils.getUsers()));
 }
 
 module.exports = gamepadConnected;

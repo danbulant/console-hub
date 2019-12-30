@@ -4,3 +4,5 @@ class Card {
     action = "";
     onclick(){}
 }
+
+module.exports = Card;

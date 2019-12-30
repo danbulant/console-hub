@@ -41,7 +41,24 @@ function renderCardList(cards){
 
     list.classList.add("cards-list");
 
-    
+    cards.forEach((card, i)=>{
+        var c = document.createElement("div");
+        c.classList.add("card");
+        
+        var img = document.createElement("img");
+        img.src = card.image;
+        c.appendChild(img);
+        
+        var text = document.createElement("span");
+        text.innerText = card.name;
+        c.appendChild(text);
+
+        var action = document.createElement("p");
+        action.innerText = card.action;
+        c.appendChild(action);
+
+        list.appendChild(c);
+    });
 }
 
 function showAction(action, side){
