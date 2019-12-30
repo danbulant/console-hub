@@ -1,6 +1,9 @@
-# No longer in development. Feel free to use and make pull request, but issues won't be solved by author
 # console-hub [![Build Status](https://travis-ci.org/danbulant/console-hub.svg?branch=master)](https://travis-ci.org/danbulant/console-hub)
 Hub application to be controlled with controller (gamepad) through gamepad HTML5 API
+
+# DEVELOPMENT
+
+Console hub is currently under heavy rewrite, so it might not be working. Do not report bugs directly - contact me at discord (http://go-dan.tk/discord) instead.
 
 ## Installation
 Installation can be done both with electron and on normal websites.
@@ -29,8 +32,9 @@ Because of legal issues (Copyright, cannot upload publicly), fonts and styles ar
 If you did everything correctly, Console hub now have all required files to run offline.
 
 ## Demo
-### GitHub
-A github demo is accesible on [GitHub.io](https://console.danbulant.eu/console-hub/html/index.html), where is available latest development.
+**No demo is available, as new rewrite uses node's require**
+### ~~GitHub
+A github demo is accesible on [GitHub.io](https://console.danbulant.eu/console-hub/html/index.html), where is available latest development.~~
 
 ## Features
 For feature/bugs that are currently worked on, please see our (kanban table)[https://trello.com/b/DlwuRuwZ/console-hub]
