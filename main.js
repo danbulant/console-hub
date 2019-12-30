@@ -1,4 +1,5 @@
 const { dialog, Menu, app, BrowserWindow } = require('electron');
+require('electron-reload')(__dirname);
 var fs = require('fs');
 var path = require('path');
 var files = require('./files');
@@ -35,7 +36,6 @@ function createWindow () {
     }
   })
   win.setTitle('Console hub (ALPHA)');
-  win.setProgressBar(1.1);
   win.setFullScreenable(true);
   var template = [{
     label: "Application",
@@ -126,16 +126,15 @@ function createWindow () {
   win.setAutoHideMenuBar(true);
   Menu.setApplicationMenu(menu);
   win.loadFile('html/views/index.html')
-  win.webContents.once('dom-ready', () => {
-  //   win.webContents.openDevTools() //debug tools
-    win.setProgressBar(0);
-  })
+
   win.maximize();
+
   win.on('enter-full-screen', () => {
     console.log('Entered fullscreen');
     win.webContents.send('fullscreen', true);
     win.setMenuBarVisibility(false)
   })
+
   win.on('enter-full-html-screen', () => {
     console.log('Entered html fullscreen');
     win.webContents.send('fullscreen', true);
@@ -151,9 +150,11 @@ function createWindow () {
     win.webContents.send('fullscreen', false);
     win.setMenuBarVisibility(true)
   })
+
   win.on('closed', () => {
     win = null
   })
+
 }
 
 app.on('ready', createWindow)
@@ -167,9 +168,7 @@ ipcMain.on('get-data', (event, arg) => {
     event.reply('wifiQuality', wifiQuality);
   }
 })
-ipcMain.on('set-load', (event, arg) => {
-  win.setProgressBar(arg);
-})
+
 ipcMain.on('fullscreen', (event, arg) => {
   console.log('Setting to fullscreen ' + arg);
   win.setFullScreen(arg);
