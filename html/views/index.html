@@ -4,25 +4,24 @@
   <meta charset="utf-8">
   <title>Console hub</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!-- include material icons -->
-  <link rel="stylesheet" href="styles.min.css"><!-- include custom stylesheet -->
+  <link rel="stylesheet" href="../../dist/css/styles.min.css"><!-- include custom stylesheet -->
 </head>
 <body>
   <div id="view">
 
   </div>
+  
+  <div class='box'>
+    <div class='wave -one'></div>
+    <div class='wave -two'></div>
+    <div class='wave -three'></div>
+  </div>
+
   <script>
   if (typeof module === 'object') {window.module = module; module = undefined;}
   </script>
-  <script src="jquery.min.js"></script>
+  <script src="../dep/jquery.min.js"></script>
   <script>if (window.module) module = window.module;</script>
-  <script src="gamepad.js"></script>
-  <script src="functions.js"></script>
-  <script src="script.js"></script>
-  <script src="onlineChecker.js"></script>
-  <script src="filesystem.js"></script>
-
-  <script src="node.js"></script>
-
-  <script src="keyboard.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
