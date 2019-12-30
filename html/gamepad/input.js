@@ -177,7 +177,8 @@ class Controls extends EventEmitter {
                     backward: "a1+",
                     left: "a0-",
                     right: "a0+",
-                    options: "b9"
+                    options: "b9",
+                    cancel: "b1"
                 }
                 break;
             case "KEY1":
@@ -189,7 +190,8 @@ class Controls extends EventEmitter {
                     backward: "k-s",
                     left: "k-a",
                     right: "k-d",
-                    options: "k-Escape"
+                    options: "k-Escape",
+                    cancel: "k-Backspace"
                 }
                 break;
         }
