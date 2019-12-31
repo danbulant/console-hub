@@ -31,8 +31,7 @@ function createWindow () {
     fullScreen: true,
     webPreferences: {
       nodeIntegration: true,
-      nodeIntegrationInWorker: true,
-      webSecurity: false
+      nodeIntegrationInWorker: true
     }
   })
   win.setTitle('Console hub (ALPHA)');
@@ -48,7 +47,7 @@ function createWindow () {
             buttons: ['ok'],
             title: 'About app',
             message: 'Console hub (ALPHA) dev version.',
-            detail: 'Nightly developer version, alpha stage. Accounts disabled.\n(c) Daniel Bulant',
+            detail: 'Nightly developer version, alpha stage. \n(c) Daniel Bulant',
           };
           dialog.showMessageBox(null, options, (response) => {
 

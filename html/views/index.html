@@ -5,17 +5,21 @@
   <title>Console hub</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!-- include material icons -->
   <link rel="stylesheet" href="../../dist/css/styles.min.css"><!-- include custom stylesheet -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com http://dist.danbulant.eu 'unsafe-inline';
+    font-src *;
+    img-src *">
 </head>
 <body>
-  <div id="view">
-
-  </div>
-  
   <div class='box'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
     <div class='wave -three'></div>
   </div>
+  
+  <div id="view">
+
+  </div>
+  
 
   <script>
   if (typeof module === 'object') {window.module = module; module = undefined;}

@@ -7,12 +7,16 @@ function removeChildNodes(node){
     }
 }
 
-function getUsers(){
+function getUsers() {
     var user = new User;
-    user.name = "Test";
-    user.avatar = "https://api.adorable.io/avatars/285/test";
+    user.name = "Add";
+    user.avatar = "../../dist/icons/plus.png";
 
-    return [user];
+    var user2 = new User;
+    user2.name = "Test";
+    user2.avatar = "https://api.adorable.io/avatars/285/test";
+
+    return [user, user2];
 }
 
 function usersToCards(users){

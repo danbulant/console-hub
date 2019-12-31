@@ -11,7 +11,7 @@ class User {
         var card = new Card;
         card.name = this.name;
         card.image = this.avatar;
-        card.action = "Select";
+        card.action = false;
 
         return card;
     }
