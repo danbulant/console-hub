@@ -2,6 +2,7 @@ const utils = require("../../utils");
 const gui = require("./gui");
 const Gamepad = require("../../gamepad/gamepad");
 const gamepad = new Gamepad;
+const controller = require("../../gamepad/ps4controller");
 
 function gamepadConnected(){
     console.log("Gamepad connected");
@@ -18,6 +19,15 @@ function gamepadConnected(){
     gui.renderUserCardList(cards);
     var selected = 0;
 
+    if(controller.isConnected()){
+        controller.setExtras({
+            rumbleLeft: 0,   // 0-255 (Rumble left intensity)
+            rumbleRight: 0,   // 0-255 (Rumble right intensity)
+            red: 0,   // 0-255 (Red intensity)
+            green: 75,  // 0-255 (Blue intensity)
+            blue: 225, // 0-255 (Green intensity)
+        });
+    }
     gamepad.on("press", "d_pad_right", () => {
         if(selected < max){
             selected++;
