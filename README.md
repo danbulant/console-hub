@@ -1,6 +1,14 @@
 # console-hub [![Build Status](https://travis-ci.org/danbulant/console-hub.svg?branch=master)](https://travis-ci.org/danbulant/console-hub)
 Hub application to be controlled with controller (gamepad) through gamepad HTML5 API
 
+# DEVELOPMENT HALTED
+
+No further development is planned for console-hub. If you still want to use the code, feel free to do so, but this project won't be maintained anymore.
+
+---
+
+Below readme is old and won't work. Also, the current version won't do anything else than just allow switching between accounts on main screen.
+
 # DEVELOPMENT
 
 Console hub is currently under heavy rewrite, so it might not be working. Do not report bugs directly - contact me at discord (http://go-dan.tk/discord) instead.
@@ -33,8 +41,8 @@ If you did everything correctly, Console hub now have all required files to run 
 
 ## Demo
 **No demo is available, as new rewrite uses node's require**
-### ~~GitHub
-A github demo is accesible on [GitHub.io](https://console.danbulant.eu/console-hub/html/index.html), where is available latest development.~~
+### ~~GitHub~~
+~~A github demo is accesible on [GitHub.io](https://console.danbulant.eu/console-hub/html/index.html), where is available latest development.~~
 
 ## Features
 For feature/bugs that are currently worked on, please see our (kanban table)[https://trello.com/b/DlwuRuwZ/console-hub]
